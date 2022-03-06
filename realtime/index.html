@@ -5,15 +5,15 @@
         <title>Real-time Demo</title>
         <script src="https://cdn.plot.ly/plotly-2.3.1.min.js"></script>
         <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+        <script src = "phaser.js"></script>
     </head>
     <body>
-        <center>
-            <div id="chart"></div>
-        </center>
+        <div class = "wrapper">
+        <div id="chart"  style="float:right;"></div>
         <script src="ioclient.js"></script>
         <script type="text/javascript">
             const pred = "";
-            const client = new IOClient('http://localhost:5500')
+            const client = new IOClient('http://localhost:5000')
             client.on('connect', () => {
                 console.log('Connected to Server')
                 client.send('stream', 'hi')
@@ -94,7 +94,8 @@
             })
 
             client.on('prediction', (args) => {
-                console.log("PRED: ", args);
+               // console.log("PRED: ", args);
+                //document.write(state);
             })
             
             /*setInterval(() => {
@@ -116,5 +117,11 @@
             }, 10)*/
 
         </script>
+        </div> 
+        <div class = "wrapper">
+            <div id ="game" style ="float:right;"></div>
+            <script src = "p1.js"></script>
+            <script src = "game.js"></script>
+        </div>
     </body>
 </html>

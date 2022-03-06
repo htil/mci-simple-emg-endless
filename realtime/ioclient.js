@@ -3,7 +3,7 @@ class IOClient {
     socket = undefined
     
     constructor(address) {
-        this.socket = io(address, { transports: ['websocket', 'polling', 'flashsocket'] })
+        this.socket = io(address)
     }
 
     on(msg, handler) {
