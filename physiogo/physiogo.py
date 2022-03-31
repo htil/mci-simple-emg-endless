@@ -166,7 +166,7 @@ class PhysioGo:
 
     def updateInstructions(self):
         # [100, 99, 98] markers
-        classes = ['Rest', 'Lift', 'Squeeze']
+        classes = ['Rest', 'Squeeze']
         index = randrange(len(classes))
         instruction = classes[index]
         mark = int(100 - index)

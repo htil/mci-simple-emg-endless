@@ -6,8 +6,8 @@ class IOServer():
 
     def __init__(self):
         self.app = Flask(__name__)
-        self.sio = SocketIO(self.app, 
-            cors_allowed_origins = '*'
+        self.sio = SocketIO(self.app,
+            cors_allowed_origins = '*', async_mode=True
         )
     
     def run(self):

@@ -5,7 +5,9 @@
         <title>Real-time Demo</title>
         <script src="https://cdn.plot.ly/plotly-2.3.1.min.js"></script>
         <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
-        <script src = "phaser.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+
+
     </head>
     <body>
         <div class = "wrapper">
@@ -116,10 +118,18 @@
                 Plotly.extendTraces('chart', next, [0])
             }, 10)*/
 
+            function test() {
+                console.log("WHAT");
+                client.send('startCollection', 'thing');
+            }
+
         </script>
         </div> 
         <div class = "wrapper">
             <div id ="game" style ="float:right;"></div>
+            <a href="#" onclick="test()">
+                <h3>HEY LAD</h3>
+            </a>
             <script src = "p1.js"></script>
             <script src = "game.js"></script>
         </div>
